@@ -1,0 +1,40 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to  execute it.
+
+*******************************************************************************/
+
+//Problem
+
+import java.util.*;
+
+class Main
+{
+    public static String comp(String s){
+        if(s.length()==0)
+        return "";
+        if(s.charAt(0)=='A')
+                return "T"+comp(s.substring(1,s.length()-1));
+        else if(s.charAt(0)=='T')
+                return "A"+comp(s.substring(1,s.length()-1));
+        else if(s.charAt(0)=='G')
+                return "C"+comp(s.substring(1,s.length()-1));
+        else
+            return "G"+comp(s.substring(1,s.length()-1));
+    }
+    public static void main (String[] args) throws java.lang.Exception
+    {
+      
+        Scanner s=new Scanner(System.in);
+        int t=s.nextInt();
+        while(t>0);
+        {
+            String sc=s.next();
+            String ans=comp(sc);
+            System.out.println(ans);
+            t--;
+        }
+    }
+}
